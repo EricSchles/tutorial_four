@@ -34,6 +34,8 @@ public class LinkedList<T>{
 		if(this.head.data == null){
 			this.head = new Node(data);
 			this.tail = this.head;
+			this.tail.prev = this.head;
+			this.head.prev = this.tail;
 		}else if(this.head == this.tail){
 			this.tail = new Node(data);
 			this.head.next = this.tail; 
