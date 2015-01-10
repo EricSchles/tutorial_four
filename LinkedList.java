@@ -15,8 +15,8 @@ class Node<T>{
 }
 
 public class LinkedList<T>{
-	Node head;
-	Node tail;
+	public Node head;
+	public Node tail;
 
 	public static <T> void print(T input){
 		System.out.println(input);
@@ -44,6 +44,14 @@ public class LinkedList<T>{
 		}
 	}
 
+	public <T> T remove(T data){
+		Node cur = this.head;
+		while(cur != null){
+			if(cur.data == data){
+				return data;
+			}
+		}
+	}
 	public String toString(){
 		Node cur = this.head;
 		String str = "";
