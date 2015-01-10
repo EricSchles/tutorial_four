@@ -18,6 +18,9 @@ public class LinkedList<T>{
 	Node head;
 	Node tail;
 
+	public static <T> void print(T input){
+		System.out.println(input);
+	}
 	public <T> LinkedList(T data){
 		this.head = new Node(data);
 		this.tail = this.head;
@@ -28,10 +31,14 @@ public class LinkedList<T>{
 	}
 
 	public <T> void add(T data){
+		print(data);
 		if(this.head == null){
 			this.head = new Node(data);
 			this.tail = this.head;
-		}else if(){
+		}else if(this.head.equals(this.tail)){
+			this.tail = new Node(data);
+			this.head.next = this.tail; 
+		}else{
 			Node new_node = new Node(data);
 			new_node = this.tail.next;
 			this.tail = new_node;
