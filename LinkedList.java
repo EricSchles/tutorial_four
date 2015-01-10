@@ -31,11 +31,10 @@ public class LinkedList<T>{
 	}
 
 	public <T> void add(T data){
-		print(data);
-		if(this.head == null){
+		if(this.head.data == null){
 			this.head = new Node(data);
 			this.tail = this.head;
-		}else if(this.head.equals(this.tail)){
+		}else if(this.head == this.tail){
 			this.tail = new Node(data);
 			this.head.next = this.tail; 
 		}else{
@@ -49,9 +48,10 @@ public class LinkedList<T>{
 		Node cur = this.head;
 		String str = "";
 		while(cur.next != null){
-			str += cur.data;
+			str += " "+cur.data;
 			cur = cur.next;
-		}
+		} 
+		str += " "+cur.data;
 		return str;
 	}
 
