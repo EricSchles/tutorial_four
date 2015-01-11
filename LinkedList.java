@@ -49,6 +49,28 @@ public class LinkedList<T>{
 		}
 	}
 
+	//I'm about to do something terrible - adding a pop method to the linked list out of sheer laziness.
+	public Object pop(){
+		if(this.head == null){
+			return "empty list";
+		}
+
+		Object data = this.tail.data;
+		Node cur = this.tail;
+		
+		if(cur == this.head){
+			this.head.next = null;
+			this.head.prev = null;
+			this.head = null;
+		} else{
+			this.tail = this.tail.prev;
+			this.tail.next = null;
+			cur = null;
+		}
+		return data;
+	} 
+
+
 
 	public <T> void remove(T data){
 		Node cur = this.head;
@@ -86,6 +108,9 @@ public class LinkedList<T>{
 	public String toString(){
 		Node cur = this.head;
 		String str = "";
+		if(cur == null){
+			return "empty list";
+		}
 		while(cur.next != null){
 			str += " "+cur.data;
 			cur = cur.next;
