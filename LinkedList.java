@@ -64,7 +64,11 @@ public class LinkedList<T>{
 				}
 			}else if(cur == this.tail){
 				 if(cur.data == this.tail.data){
-					 = cur.prev;
+					this.tail = cur.prev;
+					this.tail.next = null;
+					cur.prev = null;
+					cur.next = null; //being unnecessarily careful
+					cur = null;
 				}
 			} else if(cur.data == data){
 				Node prev_node = cur.prev;
