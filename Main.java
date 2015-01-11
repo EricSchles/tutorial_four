@@ -32,6 +32,9 @@ class Main{
 		q.push(20);
 		print(q.toString());
 		q.pop();
+		q.pop();
+		q.pop();
+		q.pop();
 		print(q.toString());
 	}
 }

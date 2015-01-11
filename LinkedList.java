@@ -55,12 +55,17 @@ public class LinkedList<T>{
 
 	public <T> void insert(T data){
 		if(this.head.data == null){
-			print("Got here");
 			this.head = new Node(data);
+			this.tail = this.head;
 		} else{
 			Node new_node = new Node(data);
 			new_node.next = this.head;
 			this.head.prev = new_node;
+			if(this.head.next == null){
+				this.tail.prev = new_node;
+				this.tail.next = null; //being unnecessarily careful	
+				this.tail = this.head;
+			}
 			this.head = new_node;
 		}
 	}
