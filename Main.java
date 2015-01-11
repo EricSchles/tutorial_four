@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Main{
 	public static <T> void print(T input){
 		System.out.println(input);
@@ -36,5 +38,10 @@ class Main{
 		q.pop();
 		q.pop();
 		print(q.toString());
+
+		ArrQueue ar_q = new ArrQueue();
+		ar_q.push(9);
+		ar_q.push(10);
+		
 	}
 }
