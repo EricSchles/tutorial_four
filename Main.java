@@ -10,7 +10,7 @@ class Main{
 		//Linked List tested
 		ll.remove(5);
 		print(ll.toString());
-
+		print(ll.toString());
 
 	}
 }
