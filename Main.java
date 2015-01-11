@@ -25,5 +25,13 @@ class Main{
 		s.pop();
 		s.pop();
 		print(s.toString());
+
+		Queue q = new Queue();
+		q.push(5);
+		q.push(10);
+		q.push(20);
+		print(q.toString());
+		q.pop();
+		print(q.toString());
 	}
 }

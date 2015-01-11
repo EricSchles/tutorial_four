@@ -54,7 +54,15 @@ public class LinkedList<T>{
 	}
 
 	public <T> void insert(T data){
-		
+		if(this.head.data == null){
+			print("Got here");
+			this.head = new Node(data);
+		} else{
+			Node new_node = new Node(data);
+			new_node.next = this.head;
+			this.head.prev = new_node;
+			this.head = new_node;
+		}
 	}
 
 	//I'm about to do something terrible - adding a pop method to the linked list out of sheer laziness.
