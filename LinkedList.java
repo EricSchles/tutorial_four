@@ -34,26 +34,51 @@ public class LinkedList<T>{
 		if(this.head.data == null){
 			this.head = new Node(data);
 			this.tail = this.head;
-			this.tail.prev = this.head;
-			this.head.prev = this.tail;
+			this.tail.prev = null;
+			this.head.prev = null;
 		}else if(this.head == this.tail){
 			this.tail = new Node(data);
-			this.head.next = this.tail; 
+			this.head.next = this.tail;
+			this.tail.prev = this.head;
+			this.head.prev = null;
 		}else{
 			Node new_node = new Node(data);
 			new_node = this.tail.next;
+			new_node.prev = this.tail;
 			this.tail = new_node;
 		}
 	}
 
-	public <T> T remove(T data){
+
+	public <T> void remove(T data){
 		Node cur = this.head;
 		while(cur != null){
-			if(cur.data == data){
-				return data;
+			if(cur.data == this.head.data){ 
+			//the check is good enough because we are at the front of
+			//our list.
+				if(cur.next != null){
+					this.head = cur.next;
+					cur.next = null;
+					cur.prev = null; //being unnecessarily careful
+					cur = null;
+				}
+			}else if(cur == this.tail){
+				 if(cur.data == this.tail.data){
+					 = cur.prev;
+				}
+			} else if(cur.data == data){
+				Node prev_node = cur.prev;
+				Node next_node = cur.next;
+				prev_node.next = next_node;
+				next_node.prev = prev_node;
+				cur.next = null;
+				cur.prev = null;
+				cur = null;
 			}
 		}
+		
 	}
+	
 	public String toString(){
 		Node cur = this.head;
 		String str = "";

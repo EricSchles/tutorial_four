@@ -3,11 +3,14 @@ class Main{
 		System.out.println(input);
 	}
 	public static void main(String[] args){
-		/*LinkedList ll = new LinkedList();
+		LinkedList ll = new LinkedList();
 		ll.add(5);
 		ll.add(7);
 		print(ll.toString());
-		Linked List tested
-		*/
+		//Linked List tested
+		ll.remove(5);
+		print(ll.toString());
+
+
 	}
 }
