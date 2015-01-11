@@ -49,10 +49,18 @@ public class LinkedList<T>{
 		}
 	}
 
+	public <T> void push(T data){
+		this.add(data);
+	}
+
+	public <T> void insert(T data){
+		
+	}
+
 	//I'm about to do something terrible - adding a pop method to the linked list out of sheer laziness.
 	public Object pop(){
 		if(this.head == null){
-			return "empty list";
+			return "empty";
 		}
 
 		Object data = this.tail.data;
